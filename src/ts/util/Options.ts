@@ -1,8 +1,8 @@
-import {Constants} from "../constants";
-import {merge} from "./merge";
+import { Constants } from "../constants"
+import { merge } from "./merge"
 
 export class Options {
-    public options: IOptions;
+    public options: IOptions
     private defaultOptions: IOptions = {
         rtl: false,
         after: undefined,
@@ -30,12 +30,12 @@ export class Options {
             emoji: {
                 "+1": "👍",
                 "-1": "👎",
-                "confused": "😕",
-                "eyes": "👀️",
-                "heart": "❤️",
-                "rocket": "🚀️",
-                "smile": "😄",
-                "tada": "🎉️",
+                confused: "😕",
+                eyes: "👀️",
+                heart: "❤️",
+                rocket: "🚀️",
+                smile: "😄",
+                tada: "🎉️",
             },
             emojiPath: `${Constants.CDN}/dist/images/emoji`,
             extend: [],
@@ -133,27 +133,30 @@ export class Options {
         },
         value: "",
         width: "auto",
-    };
+    }
 
     constructor(options: IOptions) {
-        this.options = options;
+        this.options = options
     }
 
     public merge(): IOptions {
         if (this.options) {
             if (this.options.toolbar) {
-                this.options.toolbar = this.mergeToolbar(this.options.toolbar);
+                this.options.toolbar = this.mergeToolbar(this.options.toolbar)
             } else {
-                this.options.toolbar = this.mergeToolbar(this.defaultOptions.toolbar);
+                this.options.toolbar = this.mergeToolbar(
+                    this.defaultOptions.toolbar
+                )
             }
             if (this.options.preview?.theme?.list) {
-                this.defaultOptions.preview.theme.list = this.options.preview.theme.list;
+                this.defaultOptions.preview.theme.list =
+                    this.options.preview.theme.list
             }
             if (this.options.hint?.emoji) {
-                this.defaultOptions.hint.emoji = this.options.hint.emoji;
+                this.defaultOptions.hint.emoji = this.options.hint.emoji
             }
             if (this.options.comment) {
-                this.defaultOptions.comment = this.options.comment;
+                this.defaultOptions.comment = this.options.comment
             }
             // 支持不够完善，我先注释了，后期再打开
             // if (this.options.rtl) {
@@ -161,15 +164,15 @@ export class Options {
             // }
         }
 
-        const mergedOptions = merge(this.defaultOptions, this.options);
+        const mergedOptions = merge(this.defaultOptions, this.options)
 
         if (mergedOptions.cache.enable && !mergedOptions.cache.id) {
             throw new Error(
-                "need options.cache.id, see https://ld246.com/article/1549638745630#options",
-            );
+                "need options.cache.id, see https://ld246.com/article/1549638745630#options"
+            )
         }
 
-        return mergedOptions;
+        return mergedOptions
     }
 
     private mergeToolbar(toolbar: Array<string | IMenuItem>) {
@@ -187,8 +190,7 @@ export class Options {
             },
             {
                 hotkey: "⌘H",
-                icon:
-                    '<svg><use xlink:href="#vditor-icon-headings"></use></svg>',
+                icon: '<svg><use xlink:href="#vditor-icon-headings"></use></svg>',
                 name: "headings",
                 tipPosition: "ne",
             },
@@ -236,8 +238,7 @@ export class Options {
             },
             {
                 hotkey: "⌘O",
-                icon:
-                    '<svg><use xlink:href="#vditor-icon-ordered-list"></use></svg>',
+                icon: '<svg><use xlink:href="#vditor-icon-ordered-list"></use></svg>',
                 name: "ordered-list",
                 prefix: "1. ",
                 tipPosition: "n",
@@ -251,8 +252,7 @@ export class Options {
             },
             {
                 hotkey: "⇧⌘I",
-                icon:
-                    '<svg><use xlink:href="#vditor-icon-outdent"></use></svg>',
+                icon: '<svg><use xlink:href="#vditor-icon-outdent"></use></svg>',
                 name: "outdent",
                 tipPosition: "n",
             },
@@ -289,8 +289,7 @@ export class Options {
             },
             {
                 hotkey: "⌘G",
-                icon:
-                    '<svg><use xlink:href="#vditor-icon-inline-code"></use></svg>',
+                icon: '<svg><use xlink:href="#vditor-icon-inline-code"></use></svg>',
                 name: "inline-code",
                 prefix: "`",
                 suffix: "`",
@@ -326,8 +325,7 @@ export class Options {
                 icon: '<svg><use xlink:href="#vditor-icon-table"></use></svg>',
                 name: "table",
                 prefix: "| col1",
-                suffix:
-                    " | col2 | col3 |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |",
+                suffix: " | col2 | col3 |\n| --- | --- | --- |\n|  |  |  |\n|  |  |  |",
                 tipPosition: "n",
             },
             {
@@ -355,8 +353,7 @@ export class Options {
             },
             {
                 hotkey: "⌘'",
-                icon:
-                    '<svg><use xlink:href="#vditor-icon-fullscreen"></use></svg>',
+                icon: '<svg><use xlink:href="#vditor-icon-fullscreen"></use></svg>',
                 name: "fullscreen",
                 tipPosition: "nw",
             },
@@ -372,14 +369,12 @@ export class Options {
                 tipPosition: "nw",
             },
             {
-                icon:
-                    '<svg><use xlink:href="#vditor-icon-preview"></use></svg>',
+                icon: '<svg><use xlink:href="#vditor-icon-preview"></use></svg>',
                 name: "preview",
                 tipPosition: "nw",
             },
             {
-                icon:
-                    '<svg><use xlink:href="#vditor-icon-align-center"></use></svg>',
+                icon: '<svg><use xlink:href="#vditor-icon-align-center"></use></svg>',
                 name: "outline",
                 tipPosition: "nw",
             },
@@ -389,8 +384,7 @@ export class Options {
                 tipPosition: "nw",
             },
             {
-                icon:
-                    '<svg><use xlink:href="#vditor-icon-code-theme"></use></svg>',
+                icon: '<svg><use xlink:href="#vditor-icon-code-theme"></use></svg>',
                 name: "code-theme",
                 tipPosition: "nw",
             },
@@ -412,29 +406,38 @@ export class Options {
             {
                 name: "br",
             },
-        ];
-        const toolbarResult: IMenuItem[] = [];
+            {
+                icon: '<svg><use xlink:href="#vditor-icon-delete"></use></svg>',
+                name: "delete",
+                tipPosition: "nw",
+            },
+        ]
+        const toolbarResult: IMenuItem[] = []
         toolbar.forEach((menuItem: IMenuItem) => {
-            let currentMenuItem = menuItem;
+            let currentMenuItem = menuItem
             toolbarItem.forEach((defaultMenuItem: IMenuItem) => {
                 if (
                     typeof menuItem === "string" &&
                     defaultMenuItem.name === menuItem
                 ) {
-                    currentMenuItem = defaultMenuItem;
+                    currentMenuItem = defaultMenuItem
                 }
                 if (
                     typeof menuItem === "object" &&
                     defaultMenuItem.name === menuItem.name
                 ) {
-                    currentMenuItem = Object.assign({}, defaultMenuItem, menuItem);
+                    currentMenuItem = Object.assign(
+                        {},
+                        defaultMenuItem,
+                        menuItem
+                    )
                 }
-            });
+            })
             if (menuItem.toolbar) {
-                currentMenuItem.toolbar = this.mergeToolbar(menuItem.toolbar);
+                currentMenuItem.toolbar = this.mergeToolbar(menuItem.toolbar)
             }
-            toolbarResult.push(currentMenuItem);
-        });
-        return toolbarResult;
+            toolbarResult.push(currentMenuItem)
+        })
+        return toolbarResult
     }
 }
