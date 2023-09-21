@@ -1,7 +1,7 @@
-import { code160to32 } from "../util/code160to32"
-import { Constants } from "../constants"
+import { code160to32 } from "../util/code160to32";
+import { Constants } from "../constants";
 
-let inited = false
+let inited = false;
 export const codeRender = (element: HTMLElement) => {
     element
         .querySelectorAll("pre > code")

@@ -7,6 +7,7 @@ import {setTheme} from "./setTheme";
 
 declare global {
   interface Window {
+    // @ts-ignore
     visualViewport: HTMLElement;
   }
 }

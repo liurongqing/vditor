@@ -5,8 +5,10 @@
         "module": "esnext",
         "target": "es5",
         "lib": ["dom", "ESNext"],
+        "typeRoots": ["./node_modules/@types"],
+        "types": ["./types"],
         "declaration": true
     },
-    "include": ["src", "types"],
+    "include": ["src", "./types"],
     "exclude": ["node_modules"]
 }
