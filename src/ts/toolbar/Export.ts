@@ -13,7 +13,7 @@ export class Export extends MenuItem {
         panelElement.className = `vditor-hint${menuItem.level === 2 ? "" : " vditor-panel--arrow"}`;
         panelElement.innerHTML = `<button data-type="markdown">Markdown</button>
 <button data-type="pdf">PDF</button>
-<button data-type="html">HTML</button>`;
+`;
         panelElement.addEventListener(getEventName(), (event: MouseEvent & { target: HTMLElement }) => {
             const btnElement = event.target;
             if (btnElement.tagName === "BUTTON") {

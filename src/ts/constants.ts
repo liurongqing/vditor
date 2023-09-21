@@ -29,7 +29,8 @@ export abstract class Constants {
     // ext
     "solidity", "yul"
   ];
-  public static readonly CDN = `https://unpkg.com/vditor@${VDITOR_VERSION}`;
+  // public static readonly CDN = `https://unpkg.com/vditor@${VDITOR_VERSION}`;
+  public static readonly CDN = './vditor';
   public static readonly MARKDOWN_OPTIONS = {
     autoSpace: false,
     gfmAutoLink: true,

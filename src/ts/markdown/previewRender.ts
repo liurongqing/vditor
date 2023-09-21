@@ -44,7 +44,8 @@ const mergeOptions = (options?: IPreviewOptions) => {
 
 export const md2html = (mdText: string, options?: IPreviewOptions) => {
     const mergedOptions = mergeOptions(options);
-    return addScript(`${mergedOptions.cdn}/dist/js/lute/lute.min.js`, "vditorLuteScript").then(() => {
+    console.log('mergedOptions', mergedOptions)
+    return addScript(`${mergedOptions.cdn}/dist/js/lute/lute.min.js?a=2`, "vditorLuteScript").then(() => {
         const lute = setLute({
             autoSpace: mergedOptions.markdown.autoSpace,
             gfmAutoLink: mergedOptions.markdown.gfmAutoLink,
@@ -78,6 +79,7 @@ export const md2html = (mdText: string, options?: IPreviewOptions) => {
 };
 
 export const previewRender = async (previewElement: HTMLDivElement, markdown: string, options?: IPreviewOptions) => {
+    console.log('preview render', options)
     const mergedOptions: IPreviewOptions = mergeOptions(options);
     let html = await md2html(markdown, mergedOptions);
     if (mergedOptions.transform) {

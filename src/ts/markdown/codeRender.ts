@@ -103,7 +103,7 @@ export const codeRender = (element: HTMLElement) => {
                             "aria-label",
                             window.VditorI18n?.copy || "复制"
                         )
-                    }, 1500)
+                    }, 1000)
                 }
             } catch {
                 //
