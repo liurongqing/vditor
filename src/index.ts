@@ -35,7 +35,6 @@ import {afterRenderEvent} from "./ts/wysiwyg/afterRenderEvent";
 import {WYSIWYG} from "./ts/wysiwyg/index";
 import {input} from "./ts/wysiwyg/input";
 import {renderDomByMd} from "./ts/wysiwyg/renderDomByMd";
-
 class Vditor extends VditorMethod {
     public readonly version: string;
     public vditor: IVditor;
