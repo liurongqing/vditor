@@ -5,8 +5,10 @@ import {MenuItem} from "./MenuItem";
 import {disableToolbar, enableToolbar, hidePanel} from "./setToolbar";
 
 export class Preview extends MenuItem {
+    public menuItem;
     constructor(vditor: IVditor, menuItem: IMenuItem) {
         super(vditor, menuItem);
+        this.menuItem = menuItem;
         this._bindEvent(vditor);
     }
 
@@ -49,6 +51,9 @@ export class Preview extends MenuItem {
                     vditor.outline.render(vditor);
                 }, vditor.options.preview.delay + 10);
             }
+
+            // @ts-ignore
+            this.menuItem?.afterClick()
             setPadding(vditor);
         });
     }
