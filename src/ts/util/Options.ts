@@ -438,6 +438,7 @@ export class Options {
             }
             toolbarResult.push(currentMenuItem)
         })
+        console.log('toolbarResult', toolbarResult)
         return toolbarResult
     }
 }
