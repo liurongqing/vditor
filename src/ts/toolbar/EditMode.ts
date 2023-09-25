@@ -51,7 +51,7 @@ export const setEditMode = (
     enableToolbar(vditor.toolbar.elements, Constants.EDIT_TOOLBARS)
     removeCurrentToolbar(vditor.toolbar.elements, Constants.EDIT_TOOLBARS)
     disableToolbar(vditor.toolbar.elements, ["outdent", "indent"])
-    console.log("preview..1", type)
+    // console.log("preview..1", type)
     if (type === "ir") {
         hideToolbar(vditor.toolbar.elements, ["both"])
         showToolbar(vditor.toolbar.elements, [

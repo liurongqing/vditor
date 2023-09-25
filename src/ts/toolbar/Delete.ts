@@ -16,7 +16,7 @@ export class Delete extends MenuItem {
         panelElement.className = `vditor-hint${
             menuItem.level === 2 ? "" : " vditor-panel--arrow"
         }`
-        panelElement.innerHTML = `<button data-type="confirm">确认删除？</button>`
+        panelElement.innerHTML = `<button data-type="confirm">确认删除当前文件？</button>`
         panelElement.addEventListener(
             getEventName(),
             (event: MouseEvent & { target: HTMLElement }) => {
